@@ -8,96 +8,174 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
-        html,body{
-            margin: 0;
-            padding: 0;
-        }
-        ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        width:1500px;
-        height: 100px;
-        background-color: #1B1B1B;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        border-radius: 15px;
-        
+        /* General reset for margins and paddings */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
 }
 
-li {
-  float: left;
+/* Navigation styles */
+nav ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #1B1B1B;
+    border-radius: 15px;
+    height:100px;
+    width:1200px;
 }
 
-li a {
-  display: block;
-  color: #9C9C9C;
-  text-align: center;
-  padding: 24px;
-  margin:20px;
-  text-decoration: none;
-  font-family: 'Raleway';
-  font-size: 24px;
+nav li {
+    margin: 0 10px;
 }
 
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
-}
-
-p{
+nav li a {
+    display: block;
     color: #9C9C9C;
-    font-size: 18px;
-    font-family: 'Raleway';
-    letter-spacing: 2px; 
+    text-align: center;
+    padding: 24px;
+    text-decoration: none;
+    font-size: 24px;
+    margin-top:10px;
+}
 
+nav li a:hover {
+    background-color: #111;
 }
-label{
-    font-family: 'Raleway';
-    font-size: 20px;
-    color: #fff;
-    width: 20px;
-}
-input{
-    height:60px;
-    width:500px;
-    margin-top: 15px;
-    color:black;
-    border-radius: 5px;
-    border-width: 0px;
-    font-size: 20px;
-}
+
+/* Section Styles */
 section {
     padding: 50px 0;
+    text-align: center;
 }
 
-.hero,.hero-2{
-    text-align: center;
-    margin: 0 auto;
-    height: auto;
+/* Hero Section */
+.hero {
+    background-color: #000;
+    color: white;
 }
-.hero-3 {
-    text-align: center;
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
     margin: 0 auto;
-    height: auto;
+    gap: 20px; /* Adds space between flex items */
 }
-form{
-    margin-top:60px;
-    margin-left:700px;
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: #9C9C9C;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+/* Button Styles */
+button {
+    background-color: #3F8E00;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Expertise Section */
+.hero-2{
+    background-color: white;
+    padding: 50px 20px;
+}
+.hero-3{
+    padding: 50px 20px;
+}
+
+.hero-2 > div, .hero-3 > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Form and Footer Styles */
+form {
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: left; /* Align text to the left for forms */
 }
 
 .row {
-    padding: 5px;
-    font-family: 'Raleway';
-    font-size: 18px;
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 10px 0;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
+label {
+    color: #fff;
+    font-size: 20px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    width:500px;
+}
+
+/* Footer */
+footer {
+    background-color: #1B1B1B;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .hero-2 > div, .hero-3 > div {
+        flex-direction: column;
+    }
+
+    form {
+        margin: 0 20px; /* Add margin for better spacing on mobile */
+    }
+}
 
 </style>
 </head>
@@ -144,33 +222,33 @@ form{
         <div>
             <div style="text-align: center;">
                 <h1 style="color:black;font-family: 'Raleway';font-size: 50px;">About Me</h1>
-                <p style="color: #9C9C9C;font-size: 18px;font-family: 'Raleway';letter-spacing: 2px; width:600px;margin-left:630px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, modi nesciunt repellat aliquam excepturi similique libero delectus voluptate assumenda! Velit magnam nihil explicabo necessitatibus. Sint inventore consequatur iure debitis et?</p>
+                <p style="color: #9C9C9C;font-size: 18px;font-family: 'Raleway';letter-spacing: 2px; width:600px;margin-left:30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, modi nesciunt repellat aliquam excepturi similique libero delectus voluptate assumenda! Velit magnam nihil explicabo necessitatibus. Sint inventore consequatur iure debitis et?</p>
             </div>
-            <div style="display: flex; justify-content: center;max-width: 500px;height: auto; text-align: center;margin-left: 650px;">
-                <div style="margin: 50px;padding-top: 10px;">
+            <div style="display: flex; justify-content: center;max-width: 600px;height: auto; text-align: center;margin-left: 30px;">
+                <div style="margin: 100px;padding-top: 10px;">
                     <h1 style="color:black;font-family: 'Raleway';font-size: 50px;">&lt;&lt;Expertise 1&gt;&gt;</h1>
                     <p style="width: 600px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem molestias nostrum et expedita accusamus error at obcaecati fugit aliquam? Culpa nulla voluptatem veritatis veniam repellat obcaecati beatae? Dignissimos, minima voluptatibus.</p>
-                    <button style="background-color:#3F8E00;color:white; height:60px;width:250px;border-width:0px;border-radius: 10px; font-family: 'IBM Plex Mono';font-size:20px;font-weight: bold;margin-top: 30px;">View my Project ></button>
+                    <button style="background-color:#3F8E00;color:white; height:60px;width:auto;border-width:0px;border-radius: 10px; font-family: 'IBM Plex Mono';font-size:20px;font-weight: bold;margin-top: 30px;">View my Project ></button>
                 </div>
                 <div style="margin: 50px;">
                 <img src="./assests/img1.svg" style="height: 500px; width:500px;"/>
                 </div>
             </div>
-            <div style="display: flex; justify-content: center;max-width: 500px;height: auto; text-align: center;margin-left: 650px;">
+            <div style="display: flex; justify-content: center;max-width: 500px;height: auto; text-align: center;margin-left: 100px;">
                 <div style="margin: 50px;">
                     <img src="./assests/img3.svg" style="height: 500px; width:500px;"/>
                 </div>
-                <div style="margin: 50px;padding-top: 10px;">
+                <div style="margin: 100px;padding-top: 10px;">
                     <h1 style="color:black;font-family: 'Raleway';font-size: 50px;">&lt;&lt;Expertise 2&gt;&gt;</h1>
                     <p style="width: 600px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem molestias nostrum et expedita accusamus error at obcaecati fugit aliquam? Culpa nulla voluptatem veritatis veniam repellat obcaecati beatae? Dignissimos, minima voluptatibus.</p>
-                    <button style="background-color:#3F8E00;color:white; height:60px;width:250px;border-width:0px;border-radius: 10px; font-family: 'IBM Plex Mono';font-size:20px;font-weight: bold;margin-top: 30px;">View my Project ></button>
+                    <button style="background-color:#3F8E00;color:white; height:60px;width:auto;border-width:0px;border-radius: 10px; font-family: 'IBM Plex Mono';font-size:20px;font-weight: bold;margin-top: 30px;">View my Project ></button>
                 </div>
             </div>
-            <div style="display: flex; justify-content: center;max-width: 500px;height: auto; text-align: center;margin-left: 650px;">
-                <div style="margin: 50px;padding-top: 10px;">
+            <div style="display: flex; justify-content: center;max-width: 600px;height: auto; text-align: center;margin-left: 50px;">
+                <div style="margin: 100px;padding-top: 10px;">
                     <h1 style="color:black;font-family: 'Raleway';font-size: 50px;">&lt;&lt;Expertise 3&gt;&gt;</h1>
                     <p style="width: 600px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem molestias nostrum et expedita accusamus error at obcaecati fugit aliquam? Culpa nulla voluptatem veritatis veniam repellat obcaecati beatae? Dignissimos, minima voluptatibus.</p>
-                    <button style="background-color:#3F8E00;color:white; height:60px;width:250px;border-width:0px;border-radius: 10px; font-family: 'IBM Plex Mono';font-size:20px;font-weight: bold;margin-top: 30px;">View my Project ></button>
+                    <button style="background-color:#3F8E00;color:white; height:60px;width:auto;border-width:0px;border-radius: 10px; font-family: 'IBM Plex Mono';font-size:20px;font-weight: bold;margin-top: 30px;">View my Project ></button>
                 </div>
                 <div style="margin: 50px;">
                     <img src="./assests/img2.svg" style="height: 500px; width:500px;"/>
@@ -180,10 +258,10 @@ form{
     </section>
 
     <section class="hero-3" style="background-color: #000000;">
-        <div>
+        <div style="display: flex; flex-direction: column;justify-content: center;">
             <div>
                 <h1 style="color:#fff;font-family: 'Raleway';font-size: 50px;">Get In Touch</h1>
-                <p style="width: 600px;text-align: center; margin-left: 650px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus sequi velit sit ea laborum esse. Cumque possimus alias dolores tenetur hic voluptatem iste, ratione iure laboriosam aliquid illum pariatur voluptatibus!</p>
+                <p style="width: 600px;text-align: center; color: #fff;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus sequi velit sit ea laborum esse. Cumque possimus alias dolores tenetur hic voluptatem iste, ratione iure laboriosam aliquid illum pariatur voluptatibus!</p>
             </div>
             <form action="register.html" method="get">
                 <div class="row">
@@ -199,7 +277,7 @@ form{
                     <input type="textarea" id="message" name="message" placeholder="Enter your message" style="height: 100px;">
                 </div>
             </form>
-            <button style="background-color:#3F8E00;color:white; height:60px;width:250px;border-width:0px;border-radius: 10px; font-family: 'IBM Plex Mono';font-size:20px;font-weight: bold;margin-top: 30px;">Submit ></button>
+            <button style="background-color:#3F8E00;color:white; height:60px;width:500px;border-width:0px;border-radius: 10px; font-family: 'IBM Plex Mono';font-size:20px;font-weight: bold;">Submit ></button>
         </div>
     </section>
 
